@@ -368,6 +368,24 @@ main {
   transition: 0.3s all ease;
 }
 
+.finish-btn {
+  display: none;
+  color: #FFFFFF;
+  font-weight: 494;
+  line-height: 1.09;
+  font-size: 22px;
+  padding: 18px 48px;
+  background: #EB3D35;
+  border: 1px solid #E5E4E1;
+}
+
+.finish-btn:hover {
+  background-color: #051655;
+  -webkit-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+
 /*--Radio + checkbox--*/
 
 .row__buttons {

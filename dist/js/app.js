@@ -26,6 +26,7 @@
         const steps = document.querySelectorAll(".form__step");
         const prevBtn = document.querySelector(".back");
         const nextBtn = document.querySelector(".next");
+        const finishBtn = document.querySelector(".finish-btn");
         const form = document.querySelector(".steps__form");
         const stepNumbers = document.querySelectorAll(".step__number");
         const progress = document.querySelector(".progress__success");
@@ -51,12 +52,16 @@
             stepNumbers[formStep].classList.add("active__number");
             if (0 === formStep) prevBtn.style.display = "none"; else prevBtn.style.display = "inherit";
             if (formStep === steps.length - 1) {
-                nextBtn.innerText = "Finish";
-                nextBtn.addEventListener("click", (() => {
+                nextBtn.style.display = "none";
+                finishBtn.style.display = "inherit";
+                finishBtn.addEventListener("click", (() => {
                     form.style.display = "none";
                     finishBlock.style.display = "block";
                 }));
-            } else nextBtn.innerText = "Next";
+            } else {
+                finishBtn.style.display = "none";
+                nextBtn.style.display = "inherit";
+            }
             const actives = document.querySelectorAll(".active__number");
             const percent = (actives.length - 1) / (stepNumbers.length - 1) * 100 + "%";
             progress.style.width = percent;

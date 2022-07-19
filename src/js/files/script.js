@@ -7,6 +7,7 @@ function stepForm() {
     const steps = document.querySelectorAll('.form__step');
     const prevBtn = document.querySelector('.back');
     const nextBtn = document.querySelector('.next');
+    const finishBtn = document.querySelector('.finish-btn');
     const form = document.querySelector('.steps__form');
     const stepNumbers = document.querySelectorAll('.step__number');
     const progress = document.querySelector('.progress__success');
@@ -43,14 +44,16 @@ function stepForm() {
         }
 
         if (formStep === steps.length - 1) {
-            nextBtn.innerText = 'Finish';
+            nextBtn.style.display = 'none';
+            finishBtn.style.display = 'inherit';
 
-            nextBtn.addEventListener('click', () => {
+            finishBtn.addEventListener('click', () => {
                 form.style.display = 'none';
                 finishBlock.style.display = 'block';
             });
         } else {
-            nextBtn.innerText = "Next";
+            finishBtn.style.display = 'none';
+            nextBtn.style.display = 'inherit';
         };
 
         const actives = document.querySelectorAll('.active__number');
@@ -85,6 +88,3 @@ if (document.querySelector('.form__step')) {
     }
     document.getElementById('file').addEventListener('change', handleFileSelect, false);
 };
-
-
-
